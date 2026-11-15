@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://dwvgu0rnww88p"]
+
+[ext_resource type="Texture2D" uid="uid://b0fddabhjionu" path="res://background0.png" id="1_1ehe0"]
+[ext_resource type="Script" uid="uid://n6qtasqw3p28" path="res://Scenes/main_menu.gd" id="1_ce3w2"]
+[ext_resource type="FontFile" uid="uid://dmbnnfhf1fo3i" path="res://brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="2_ce3w2"]
+[ext_resource type="FontFile" uid="uid://dgw0jfebbf8m6" path="res://brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="3_n45e2"]
+
+[node name="MainMenu" type="Control" unique_id=1951199067]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -605.0
+offset_top = -352.0
+offset_right = -605.0
+offset_bottom = -352.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ce3w2")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1997203733]
+position = Vector2(1121, 685)
+scale = Vector2(1, 0.983)
+texture = ExtResource("1_1ehe0")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=506239429]
+layout_mode = 0
+offset_left = 749.0
+offset_top = 422.0
+offset_right = 1549.0
+offset_bottom = 486.0
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1643768297]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.4239498, 0.5612477, 0.5142067, 1)
+theme_override_fonts/font = ExtResource("2_ce3w2")
+theme_override_font_sizes/font_size = 64
+text = "Daven Bouncer"
+
+[node name="PLayButton" type="Button" parent="VBoxContainer" unique_id=1334096235]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_n45e2")
+text = "Play!"
+
+[connection signal="pressed" from="VBoxContainer/PLayButton" to="." method="_on_playbutton_pressed"]

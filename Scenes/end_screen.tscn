@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://g5uoww42kse6"]
+
+[ext_resource type="Texture2D" uid="uid://b0fddabhjionu" path="res://background0.png" id="1_1gwaw"]
+[ext_resource type="FontFile" uid="uid://dmbnnfhf1fo3i" path="res://brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="2_bhpww"]
+
+[node name="EndScreen" type="Control" unique_id=36008445]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1422461805]
+position = Vector2(226, 187)
+texture = ExtResource("1_1gwaw")
+
+[node name="Label" type="Label" parent="." unique_id=318980472]
+layout_mode = 0
+offset_left = 91.0
+offset_top = 115.0
+offset_right = 1123.0
+offset_bottom = 447.0
+theme_override_colors/font_color = Color(0.10941022, 0.17276788, 0.15994841, 1)
+theme_override_fonts/font = ExtResource("2_bhpww")
+theme_override_font_sizes/font_size = 64
+text = "You beat the game!
+
+Game by:
+Hayes Pursell
+Gabe Berzera
+Syndey U"

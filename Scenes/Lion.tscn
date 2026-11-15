@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://bj4smq67hvfst"]
+
+[ext_resource type="Script" uid="uid://ctnin6e8hqifc" path="res://Scripts/character_body_2d.gd" id="1_kx51r"]
+[ext_resource type="Texture2D" uid="uid://do18ltykpqbfv" path="res://Sprites/DavenSpriteSheet.png" id="2_kx51r"]
+[ext_resource type="AudioStream" uid="uid://b7tj28e3q53fi" path="res://brackeys_platformer_assets/sounds/jump.wav" id="3_3r2l0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3r2l0"]
+atlas = ExtResource("2_kx51r")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r1xi6"]
+atlas = ExtResource("2_kx51r")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ap63n"]
+atlas = ExtResource("2_kx51r")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pufge"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3r2l0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r1xi6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ap63n")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2feq2"]
+radius = 16.0
+
+[node name="Daven" type="CharacterBody2D" unique_id=528392122 groups=["player"]]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_kx51r")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1594485721 groups=["player"]]
+position = Vector2(0, 4)
+sprite_frames = SubResource("SpriteFrames_pufge")
+autoplay = "default"
+frame_progress = 0.54923594
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1865656631 groups=["player"]]
+position = Vector2(0, 6)
+shape = SubResource("CircleShape2D_2feq2")
+
+[node name="Jumpsound" type="AudioStreamPlayer2D" parent="." unique_id=2058760860]
+stream = ExtResource("3_3r2l0")
